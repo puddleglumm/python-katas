@@ -12,8 +12,9 @@ def roman_numeral_of(arabic_number: int):
     roman_representation: str = ""
 
     for symbol in reversed(roman_symbol_values):
-        while remaining_value >= roman_symbol_values[symbol]:
-            remaining_value -= roman_symbol_values[symbol]
+        symbol_value = roman_symbol_values[symbol]
+        while remaining_value >= symbol_value:
+            remaining_value -= symbol_value
             roman_representation += symbol
 
     return roman_representation
